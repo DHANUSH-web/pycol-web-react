@@ -1,0 +1,50 @@
+.progress_container {
+    padding: 2px;
+    margin: 0 15px;
+    border: solid 2px transparent;
+    border-radius: 10px;
+}
+
+.RSlider,.GSlider, .BSlider {
+    display: flex;
+    margin: 5px 0;
+    align-items: center;
+}
+
+input[type='number'] {
+    width: 60px;
+    padding: 2px;
+    margin: 7px;
+    font-family: pycol;
+    font-weight: bolder;
+    font-size: 15px;
+    border: solid 2px #00000022;
+    border-radius: 6px;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type='number']:focus {
+    border: solid 2px #0050ffaa;
+}
+
+input[type='range'] {
+    width: 100%;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #0050ff22;
+    padding: 2px;
+    border-radius: 15px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    transition: 0.5s;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+    transform: scale(1.5);
+}

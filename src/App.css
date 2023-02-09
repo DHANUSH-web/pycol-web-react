@@ -1,0 +1,232 @@
+@font-face {
+  font-family: pycol;
+  src: url("fonts/pycol/pycol.ttf");
+}
+
+@font-face {
+  font-family: pycol-bold;
+  src: url("fonts/pycol/pycol-bold.ttf");
+}
+
+body {
+  background-color: white;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.layout {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  background-color: transparent;
+  width: 330px;
+  min-height: 555px;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+.appContent {
+  border: solid 2px #00000055;
+  border-radius: 0 0 10px 10px;
+  min-width: 320px;
+  min-height: 530px;
+  box-shadow: 0 5px 15px 2px #00000055;
+  text-align: center;
+}
+
+#fontawesome {
+  background-color: #0050ff;
+  color: white;
+  padding: 6px;
+  margin-top: 7px;
+  border-radius: 7px;
+}
+
+.title-text {
+  font-weight: bolder;
+  font-family: pycol;
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.title-text:hover {
+  background-color: #00000022;
+  border-radius: 6px;
+}
+
+.developer {
+  width: 100%;
+  text-align: center;
+  font-family: pycol;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.devName {
+  color: #0080ff;
+  padding: 2px 5px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.devName:hover {
+  background-color: #0050ff22;
+  border-radius: 5px;
+}
+
+.preview {
+  background-color: white;
+  border: solid 2px #00000022;
+  border-radius: 10px;
+  padding: 0;
+  margin: 0 10px;
+  height: 80px;
+  transition: 0.5s;
+}
+
+.preview:hover {
+  transform: scale(1.2);
+}
+
+.copyIcon {
+  background-color: #353131;
+  float: right;
+  padding: 2px 7px;
+  margin: 5px;
+  font-size: 13px;
+  border: solid 1px #00000022;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: pycol;
+  font-weight: 500;
+  color: white;
+}
+
+#appStatus {
+  background-color: #00dd5077;
+  color: #007700;
+  padding: 0 3px;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+.colorInput {
+  margin: 10px;
+  width: 295px;
+  height: 40px;
+  border: solid 0;
+  border-bottom: solid 2px #00000022;
+  box-shadow: 0 0 15px 2px #00000011;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+  font-family: pycol;
+  font-weight: bolder;
+  font-size: 14px;
+  outline: none;
+  transition: .5s;
+}
+
+.colorInput::placeholder {
+  color: #00000055;
+}
+
+.colorInput:focus {
+  border-bottom-color: #0080ff;
+}
+
+.saved-colors {
+  background-color: white;
+  border: solid 2px #00000022;
+  border-radius: 7px;
+  margin: 0 10px;
+  height: 45px;
+  /* max-width: 295px; */
+  padding: 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  transition: 0.5s;
+}
+
+.saved-colors:hover {
+  border: solid 2px #00000055;
+}
+
+#empty-message {
+  font-size: 14px;
+  font-weight: bolder;
+  font-family: pycol;
+}
+
+#control-buttons {
+  margin: auto;
+  display: flex;
+}
+
+#applyColor, #moreInfo {
+  width: 100%;
+  margin: 15px 10px;
+  padding: 7px;
+  border-radius: 7px;
+  font-family: pycol;
+  font-weight: 600;
+  outline: none;
+  background-color: #fff;
+  border: solid 2px #0040ff55;
+  color: #0050ff;
+  transition: 0.3s;
+}
+
+#applyColor:hover, #moreInfo:hover {
+  background-color: #0050ff22;
+}
+
+#applyIcon, #moreInfoIcon {
+  margin-right: 6px;
+  transform: scale(0.9);
+}
+
+#logoIcon {
+  background-color: #0050ff;
+  padding: 7px;
+  margin-right: 5px;
+  color: white;
+  border-radius: 7px;
+}
+
+#savedColor {
+  border: solid 2px #00000022;
+  border-radius: 7px;
+  width: 37px;
+  height: 33px;
+  margin: 2px;
+  padding: 2px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#savedColor:hover {
+  box-shadow: 0 0 10px 2px #00000055;
+  transform: scale(1.2);
+}
+
+#savedColor:focus {
+  border: solid 2px #000;
+}

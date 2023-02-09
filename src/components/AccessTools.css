@@ -1,0 +1,49 @@
+.hotAccess {
+    background-color: #fff;
+    padding: 2px;
+    margin: 15px;
+    border: solid 2px #eeeeee;
+    box-shadow: 0 0 10px 2px #55555555;
+    border-radius: 9px;
+    display: inline;
+    padding-bottom: 20px;
+}
+
+.tools {
+    list-style: none;
+    display: inline;
+    text-align: center;
+}
+
+.tools li {
+    color: #a5bbd2;
+    padding: 5px 9px;
+    margin: 5px;
+    cursor: pointer;
+    transition: .5s;
+    border-radius: 10px;
+}
+
+.randomColor:hover {
+    background-color: #55ff22;
+    color: #005055;
+    transform: scale(1.2);
+}
+
+.saveColor:hover {
+    background-color: #8994e0;
+    color: #0020ff;
+    transform: scale(1.2);
+}
+
+.clearList:hover {
+    background-color: #ffaa00;
+    color: #ff5000;
+    transform: scale(1.2);
+}
+
+.repo:hover, .instagram:hover, .app-theme:hover {
+    background-color: #0080ff;
+    color: #fff;
+    transform: scale(1.2);
+}

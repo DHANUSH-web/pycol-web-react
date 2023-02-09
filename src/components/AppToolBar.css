@@ -1,0 +1,27 @@
+.macAppToolBar {
+    background-color: #00000022;
+    border: solid 2px #00000033;
+    border-bottom: 0;
+    border-radius: 10px 10px 0 0;
+    padding: 2px;
+}
+
+#close {
+    color: #ff605c;
+}
+
+#min {
+    color: #ffbd44;
+}
+
+#max {
+    color: #00ca4e;
+}
+
+#close,
+#min,
+#max {
+    margin: 1.2px;
+    cursor: arrow;
+    transform: scale(0.8);
+}
