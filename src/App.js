@@ -5,7 +5,7 @@ import {
   applyColor,
   moreInfo,
 } from "./components/utils";
-import { Toaster } from "react-hot-toast";
+import { toast, Toaster } from "react-hot-toast";
 import MacAppToolBar from "./components/AppToolBar";
 import AccessTools from "./components/AccessTools";
 import SeekBar from "./components/SeekBar";
@@ -46,7 +46,6 @@ class App extends Component {
                   <div
                     className="copyIcon"
                     onClick={() => copyHexCode()}
-                    
                     onMouseOver={() =>
                       tippy(".copyIcon", {
                         content: "Copy Color Code",
@@ -71,14 +70,20 @@ class App extends Component {
                 <div
                   className="saved-colors"
                   id="saved-colors"
-                  onMouseOver={() =>
+                  onMouseOver={() => {
+                    document.getElementById("empty-message").innerHTML =
+                      'Click<i class="fa fa-bookmark" id="tipIcon"></i>to save colors';
                     tippy(".saved-colors", {
                       content: "Color List",
-                      placement: "bottom",
+                      placement: "top",
                       animation: "scale",
                       arrow: false,
-                    })
-                  }
+                    });
+                  }}
+                  onMouseOut={() => {
+                    document.getElementById("empty-message").innerHTML =
+                      "Inventory is empty";
+                  }}
                 >
                   <span id="empty-message">Inventory is empty</span>
                 </div>

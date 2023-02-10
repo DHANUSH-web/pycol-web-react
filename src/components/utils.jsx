@@ -123,6 +123,19 @@ const validateColor = (color) => {
 };
 
 export const applyColor = () => {
+  const stdColors = {
+    white: [255, 255, 255],
+    black: [0, 0, 0],
+    red: [255, 0, 0],
+    green: [0, 255, 0],
+    blue: [0, 0, 255],
+    teal: [0, 128, 128],
+    pink: [255, 0, 255],
+    yellow: [255, 255, 0],
+    aqua: [0, 255, 255],
+    orange: [255, 135, 0]
+  }
+
   let widget = document.getElementById("colorInput");
   let color = widget.value;
 
@@ -142,6 +155,9 @@ export const applyColor = () => {
         fontWeight: "bolder",
       },
     });
+  else if (color.toLowerCase() in stdColors) {
+    updateWidgets(stdColors[color.toLowerCase()]);
+  }
   else {
     color = color.split(" ");
     if (color.length !== 3)
@@ -202,7 +218,7 @@ export const saveColor = () => {
         arrow: false,
       });
     };
-    block.ondblclick = () => {
+    block.ondragleave = () => {
       block.remove();
       if (stack.childElementCount === 0) {
         let span = document.createElement("span");

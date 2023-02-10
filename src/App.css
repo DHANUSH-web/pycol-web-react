@@ -203,6 +203,16 @@ body {
   transform: scale(0.9);
 }
 
+#tipIcon {
+  border: solid 2px;
+  background-color: #0080ff;
+  color: white;
+  padding: 10px;
+  margin: 0;
+  transform: scale(0.7);
+  border-radius: 7px;
+}
+
 #logoIcon {
   background-color: #0050ff;
   padding: 7px;
