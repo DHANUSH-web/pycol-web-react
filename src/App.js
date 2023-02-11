@@ -3,9 +3,9 @@ import {
   getHexCode,
   copyHexCode,
   applyColor,
-  moreInfo,
+  moreInfo
 } from "./components/utils";
-import { toast, Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import MacAppToolBar from "./components/AppToolBar";
 import AccessTools from "./components/AccessTools";
 import SeekBar from "./components/SeekBar";

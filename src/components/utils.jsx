@@ -133,8 +133,8 @@ export const applyColor = () => {
     pink: [255, 0, 255],
     yellow: [255, 255, 0],
     aqua: [0, 255, 255],
-    orange: [255, 135, 0]
-  }
+    orange: [255, 135, 0],
+  };
 
   let widget = document.getElementById("colorInput");
   let color = widget.value;
@@ -157,8 +157,7 @@ export const applyColor = () => {
     });
   else if (color.toLowerCase() in stdColors) {
     updateWidgets(stdColors[color.toLowerCase()]);
-  }
-  else {
+  } else {
     color = color.split(" ");
     if (color.length !== 3)
       toast.error("Invalid color", {
@@ -218,7 +217,7 @@ export const saveColor = () => {
         arrow: false,
       });
     };
-    block.ondragleave = () => {
+    block.ondragend = () => {
       block.remove();
       if (stack.childElementCount === 0) {
         let span = document.createElement("span");
@@ -268,5 +267,46 @@ export const clearColorList = () => {
     }
   }
 };
+
+document.addEventListener(
+  "keydown",
+  (e) => {
+    if (e.ctrlKey && String.fromCharCode(e.keyCode) === "P") {
+      e.preventDefault();
+      applyColor();
+    } else if (e.ctrlKey && String.fromCharCode(e.keyCode) === "R") {
+      e.preventDefault();
+      generateRandomColors();
+    } else if (e.ctrlKey && String.fromCharCode(e.keyCode) === "I") {
+      e.preventDefault();
+      moreInfo();
+    } else if (e.ctrlKey && String.fromCharCode(e.keyCode) === "S") {
+      e.preventDefault();
+      saveColor();
+    } else if (e.ctrlKey && String.fromCharCode(e.keyCode) === "D") {
+      e.preventDefault();
+      clearColorList();
+    } else if (e.ctrlKey && String.fromCharCode(e.keyCode) === "C") {
+      e.preventDefault();
+      copyHexCode();
+    } else if (
+      e.shiftKey &&
+      String.fromCharCode(e.keyCode) === "C"
+    ) {
+      e.preventDefault();
+      let rgb = getSliderValues();
+      navigator.clipboard.writeText(`${rgb[0]}, ${rgb[1]}, ${rgb[2]}`);
+      toast.success("You got the RGB :)", {
+        style: {
+          fontFamily: "pycol",
+          fontWeight: "bolder",
+          fontSize: 14,
+          position: "top-center",
+        },
+      });
+    }
+  },
+  false
+);
 
 export default updateWidgets;
