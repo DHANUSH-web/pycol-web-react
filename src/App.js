@@ -19,7 +19,7 @@ const developerProfile = "https://www.bitbucket.org/dhanushhv/";
 class App extends Component {
   render() {
     return (
-      <>
+      <div className="App">
         <div className="container">
           <div className="layout">
             <MacAppToolBar />
@@ -147,7 +147,7 @@ class App extends Component {
           </span>
         </p>
         <Toaster />
-      </>
+      </div>
     );
   }
 }
