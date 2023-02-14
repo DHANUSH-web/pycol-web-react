@@ -1,30 +1,29 @@
-const widgets = {
-  appToolbar: document.getElementById("appToolBar"),
-  appContent: document.getElementById("AppContent"),
-  titleText: document.getElementById("titleText"),
-  spinBox1: document.getElementById("RSet"),
-  spinBox2: document.getElementById("GSet"),
-  spinBox3: document.getElementById("BSet"),
-  userInput: document.getElementById("colorInput"),
-  inventory: document.getElementById("saved-colors"),
-  inventoryMessage: document.getElementById("empty-message"),
-  applyButton: document.getElementById("applyColor"),
-  moreInfoButton: document.getElementById("moreInfo"),
-  footerMessage: document.getElementById("pycol"),
-  accessTools: document.getElementById("hotAccess"),
-  tools: document.getElementsByClassName("tool"),
-};
+let appToolbar = document.getElementById("appToolBar");
+let appContent = document.getElementById("AppContent");
+let titleText = document.getElementById("titleText");
+let spinBox1 = document.getElementById("RSet");
+let spinBox2 = document.getElementById("GSet");
+let spinBox3 = document.getElementById("BSet");
+let userInput = document.getElementById("colorInput");
+let inventory = document.getElementById("saved-colors");
+let inventoryMessage = document.getElementById("empty-message");
+let applyButton = document.getElementById("applyColor");
+let moreInfoButton = document.getElementById("moreInfo");
+let footerMessage = document.getElementById("pycol");
+let appStatus = document.getElementById("appStatus");
+let accessTools = document.getElementById("hotAccess");
+let app = document.getElementById("app-theme");
 
 const darkTheme = {
-  bgColor: "#1B2430",
+  bgColor: "#404258",
   toolBar: {
     bgColor: "#222831",
   },
   textColor: "#bbbbff",
   appLayout: {
-    bgColor: "#404258",
+    bgColor: "#222831",
   },
-  spinBoxbg: {
+  spinBox: {
     bgColor: "#404258",
     color: "#bbbfff",
   },
@@ -41,10 +40,11 @@ const darkTheme = {
     color: "#0080ff",
   },
   footer: {
+    statusColor: '#00ff50',
     color: "#bbbbff",
   },
   accessTools: {
-    bgColor: "#404258",
+    bgColor: "#222831",
     color: "#aacccc",
   },
 };
@@ -58,7 +58,7 @@ const lightTheme = {
   appLayout: {
     bgColor: "#fff",
   },
-  spinBoxbg: {
+  spinBox: {
     bgColor: "#fff",
     color: "#000",
   },
@@ -75,7 +75,8 @@ const lightTheme = {
     color: "#0080ff",
   },
   footer: {
-    color: "#bbbbff",
+    statusColor: '#007700',
+    color: "#000",
   },
   accessTools: {
     bgColor: "#fff",
@@ -83,4 +84,30 @@ const lightTheme = {
   },
 };
 
-export { widgets, lightTheme, darkTheme };
+export const updateToolBar = (bgColor) => appToolbar.style.backgroundColor = bgColor;
+export const updateAppTitle = (color) => titleText.style.color = color;
+export const updateAppContent = (props) => {
+  appContent.style.backgroundColor = props.bgColor;
+  appContent.style.borderColor = props.borderColor;
+}
+
+export const updateSpinBox = (props) => {
+  spinBox1.style.backgroundColor = props.bgColor;
+  spinBox1.style.color = props.color;
+  spinBox1.style.borderColor = props.borderColor;
+
+  spinBox2.style.backgroundColor = props.bgColor;
+  spinBox2.style.color = props.color;
+  spinBox2.style.borderColor = props.borderColor;
+
+  spinBox3.style.backgroundColor = props.bgColor;
+  spinBox3.style.color = props.color;
+  spinBox3.style.borderColor = props.borderColor;
+}
+
+export const updateUserInput = (props) => {
+  userInput.style.backgroundColor = props.bgColor;
+  userInput.style.color = props.color;
+}
+
+export { lightTheme, darkTheme };

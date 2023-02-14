@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { clearColorList, generateRandomColors, saveColor } from "./utils";
+import { clearColorList, generateRandomColors, saveColor, swithTheme } from "./utils";
 import tippy from "tippy.js";
 import "tippy.js/animations/scale.css";
 import "tippy.js/dist/tippy.css";
@@ -7,9 +7,11 @@ import "./AccessTools.css";
 
 class AccessTools extends Component {
   render() {
+    let light = true;
+
     return (
-      <div className="hotAccess">
-        <ul className="tools">
+      <div className="hotAccess" id="hotAccess">
+        <ul className="tools" id="tools">
           <li
             className="randomColor"
             id="tool"
@@ -53,6 +55,22 @@ class AccessTools extends Component {
             }
           >
             <i className="fa fa-trash"></i>
+          </li>
+          <li
+            className="app-theme"
+            id="app-theme"
+            onMouseOver={() => tippy('.app-theme', {
+              content: 'Theme',
+              animation: 'scale',
+              arrow: false,
+              placement: 'right'
+            })}
+            onClick={() => {
+              light = !light;
+              swithTheme(light ? 'light' : 'dark');
+            } }
+          >
+            <i className="fa fa-moon"></i>
           </li>
           <hr />
           <li

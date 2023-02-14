@@ -1,6 +1,7 @@
 import toast from "react-hot-toast";
 import tippy from "tippy.js";
 import "tippy.js/animations/scale.css";
+import { darkTheme, lightTheme } from "./appTheme";
 
 export const getSliderValues = () => {
   let r = parseInt(document.getElementById("RSlide").value);
@@ -232,24 +233,13 @@ export const saveColor = () => {
   }
 };
 
-// var isDark = false;
-
-// export const switchTheme = () => {
-
-//   if (isDark === false) {
-//     isDark = true;
-//     widgets.appToolbar.style.backgroundColor = lightTheme.toolBar.bgColor;
-//     widgets.appContent.style.backgroundColor = lightTheme.appLayout.bgColor;
-//     document.body.style.backgroundColor = lightTheme.bgColor;
-//   }
-
-//   else {
-//     isDark = false;
-//     widgets.appToolbar.style.backgroundColor = darkTheme.toolBar.bgColor;
-//     widgets.appContent.style.backgroundColor = darkTheme.appLayout.bgColor;
-//     document.body.style.backgroundColor = darkTheme.bgColor;
-//   }
-// }
+export const swithTheme = (theme) => {
+  if (theme == "dark") {
+    toast('Switched to Dark Theme');
+  } else {
+    toast('Switched to Light Theme');
+  }
+};
 
 export const clearColorList = () => {
   let stack = document.getElementById("saved-colors");
@@ -289,10 +279,7 @@ document.addEventListener(
     } else if (e.ctrlKey && String.fromCharCode(e.keyCode) === "C") {
       e.preventDefault();
       copyHexCode();
-    } else if (
-      e.shiftKey &&
-      String.fromCharCode(e.keyCode) === "C"
-    ) {
+    } else if (e.shiftKey && String.fromCharCode(e.keyCode) === "C") {
       e.preventDefault();
       let rgb = getSliderValues();
       navigator.clipboard.writeText(`${rgb[0]}, ${rgb[1]}, ${rgb[2]}`);
