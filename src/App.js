@@ -74,10 +74,11 @@ class App extends Component {
                     document.getElementById("empty-message").innerHTML =
                       'Click<i class="fa fa-bookmark" id="tipIcon"></i>to save colors';
                     tippy(".saved-colors", {
-                      content: "Color List",
+                      content: "Color List <kbd>Ctrl+S</kbd>",
                       placement: "top",
                       animation: "scale",
                       arrow: false,
+                      allowHTML: true
                     });
                   }}
                   onMouseOut={() => {
@@ -93,10 +94,12 @@ class App extends Component {
                     onClick={() => applyColor()}
                     onMouseOver={() =>
                       tippy("#applyColor", {
-                        content: "Click to apply custom color",
+                        content: "Apply Color <kbd>Ctrl+P</kbd>",
                         placement: "bottom",
                         animation: "scale",
                         arrow: false,
+                        followCursor: true,
+                        allowHTML: true
                       })
                     }
                   >
@@ -105,13 +108,14 @@ class App extends Component {
                   </button>
                   <button
                     id="moreInfo"
-                    onClick={() => moreInfo()}
+                    onClick={() => moreInfo() }
                     onMouseOver={() =>
                       tippy("#moreInfo", {
-                        content: "Learn more",
+                        content: "Learn more <kbd>Ctrl+I</kdb>",
                         placement: "bottom",
                         animation: "scale",
                         arrow: false,
+                        allowHTML: true
                       })
                     }
                   >

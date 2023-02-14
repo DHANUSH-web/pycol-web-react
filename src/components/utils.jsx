@@ -1,7 +1,6 @@
 import toast from "react-hot-toast";
 import tippy from "tippy.js";
 import "tippy.js/animations/scale.css";
-import { darkTheme, lightTheme } from "./appTheme";
 
 export const getSliderValues = () => {
   let r = parseInt(document.getElementById("RSlide").value);
@@ -84,9 +83,13 @@ export const copyHexCode = () => {
   try {
     let hex = getHexCode(getSliderValues());
     navigator.clipboard.writeText(hex);
-    toast.success("Copied to clipboard");
+    toast.success("Copied to clipboard", {
+      className: 'ltm'
+    });
   } catch (e) {
-    toast.error("Something went wrong");
+    toast.error("Something went wrong", {
+      className: 'ltm'
+    });
   }
 };
 
@@ -143,18 +146,12 @@ export const applyColor = () => {
   if (color[0] === "#") {
     if (color.length !== 7)
       toast.error("Hex code is invalid", {
-        style: {
-          fontFamily: "pycol",
-          fontWeight: "bolder",
-        },
+        className: 'ltm'
       });
     else updateWidgets(getRGB(color.substring(1)));
   } else if (color.length === 0)
     toast.error("Field is empty", {
-      style: {
-        fontFamily: "pycol",
-        fontWeight: "bolder",
-      },
+      className: 'ltm'
     });
   else if (color.toLowerCase() in stdColors) {
     updateWidgets(stdColors[color.toLowerCase()]);
@@ -162,10 +159,7 @@ export const applyColor = () => {
     color = color.split(" ");
     if (color.length !== 3)
       toast.error("Invalid color", {
-        style: {
-          fontFamily: "pycol",
-          fontWeight: "bolder",
-        },
+        className: 'ltm'
       });
     else if (
       validateColor(color[0]) &&
@@ -175,24 +169,14 @@ export const applyColor = () => {
       updateWidgets(color);
     else
       toast.error("Values must be in 0 to 255 range", {
-        style: {
-          fontFamily: "pycol",
-          fontWeight: "bolder",
-          fontSize: 13,
-        },
+        className: 'ltm'
       });
   }
 };
 
 export const moreInfo = () => {
   toast.success("PyCOL is developed by Dhanush H V", {
-    style: {
-      fontFamily: "pycol",
-      fontWeight: "bolder",
-      fontSize: "13px",
-      backgroundColor: "#333",
-      color: "#fff",
-    },
+    className: 'moreInfo'
   });
 };
 
@@ -201,7 +185,9 @@ export const saveColor = () => {
   let stack = document.getElementById("saved-colors");
   let initialChild = document.getElementById("empty-message");
 
-  if (stack.childElementCount === 7) toast.error("No space, clear the list");
+  if (stack.childElementCount === 7) toast.error("No space, clear the list", {
+    className: 'ltm'
+  });
   else {
     if (stack.contains(initialChild)) stack.removeChild(initialChild);
 
@@ -234,10 +220,16 @@ export const saveColor = () => {
 };
 
 export const swithTheme = (theme) => {
-  if (theme == "dark") {
-    toast('Switched to Dark Theme');
+  if (theme === "dark") {
+    document.getElementById('app-theme').innerHTML = '<i class="fa fa-sun"></i>';
+    toast.success("Switched to Dark Theme", {
+      className: "dtm",
+    });
   } else {
-    toast('Switched to Light Theme');
+    document.getElementById('app-theme').innerHTML = '<i class="fa fa-moon"></i>';
+    toast.success("Switched to Light Theme", {
+      className: "ltm",
+    });
   }
 };
 
@@ -246,7 +238,9 @@ export const clearColorList = () => {
   let initialChild = document.getElementById("empty-message");
 
   if (stack.childElementCount === 1 && stack.contains(initialChild))
-    toast.error("Color list is empty");
+    toast.error("Color list is empty", {
+      className: 'ltm'
+    });
   else {
     document.getElementById("savedColor").remove();
     if (stack.childElementCount === 0) {
@@ -284,12 +278,7 @@ document.addEventListener(
       let rgb = getSliderValues();
       navigator.clipboard.writeText(`${rgb[0]}, ${rgb[1]}, ${rgb[2]}`);
       toast.success("You got the RGB :)", {
-        style: {
-          fontFamily: "pycol",
-          fontWeight: "bolder",
-          fontSize: 14,
-          position: "top-center",
-        },
+        className: 'ltm'
       });
     }
   },

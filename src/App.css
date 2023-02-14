@@ -188,14 +188,14 @@ body {
   font-family: pycol;
   font-weight: 600;
   outline: none;
-  background-color: #fff;
-  border: solid 2px #0040ff55;
-  color: #0050ff;
+  background-color: #3E8DD4;
+  border: solid 2px #3E7FDA;
+  color: #fff;
   transition: 0.3s;
 }
 
 #applyColor:hover, #moreInfo:hover {
-  background-color: #0050ff22;
+  border-radius: 20px;
 }
 
 #applyIcon, #moreInfoIcon {
@@ -239,4 +239,22 @@ body {
 
 #savedColor:focus {
   border: solid 2px #000;
+}
+
+.dtm, .moreInfo {
+  background-color: #454545;
+  color: white;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bolder;
+  font-family: pycol;
+}
+
+.ltm {
+  background-color: #fff;
+  color: black;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bolder;
+  font-family: pycol;
 }

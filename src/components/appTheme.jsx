@@ -1,3 +1,4 @@
+/*
 let appToolbar = document.getElementById("appToolBar");
 let appContent = document.getElementById("AppContent");
 let titleText = document.getElementById("titleText");
@@ -13,6 +14,7 @@ let footerMessage = document.getElementById("pycol");
 let appStatus = document.getElementById("appStatus");
 let accessTools = document.getElementById("hotAccess");
 let app = document.getElementById("app-theme");
+*/
 
 const darkTheme = {
   bgColor: "#404258",
@@ -83,31 +85,5 @@ const lightTheme = {
     color: "#a5bbd2",
   },
 };
-
-export const updateToolBar = (bgColor) => appToolbar.style.backgroundColor = bgColor;
-export const updateAppTitle = (color) => titleText.style.color = color;
-export const updateAppContent = (props) => {
-  appContent.style.backgroundColor = props.bgColor;
-  appContent.style.borderColor = props.borderColor;
-}
-
-export const updateSpinBox = (props) => {
-  spinBox1.style.backgroundColor = props.bgColor;
-  spinBox1.style.color = props.color;
-  spinBox1.style.borderColor = props.borderColor;
-
-  spinBox2.style.backgroundColor = props.bgColor;
-  spinBox2.style.color = props.color;
-  spinBox2.style.borderColor = props.borderColor;
-
-  spinBox3.style.backgroundColor = props.bgColor;
-  spinBox3.style.color = props.color;
-  spinBox3.style.borderColor = props.borderColor;
-}
-
-export const updateUserInput = (props) => {
-  userInput.style.backgroundColor = props.bgColor;
-  userInput.style.color = props.color;
-}
 
 export { lightTheme, darkTheme };
