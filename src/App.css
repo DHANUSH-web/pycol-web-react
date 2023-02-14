@@ -188,15 +188,16 @@ body {
   font-family: pycol;
   font-weight: 600;
   outline: none;
-  background-color: #3E8DD4;
-  border: solid 2px #3E7FDA;
   color: #fff;
+  border: solid 2px transparent;
   transition: 0.3s;
 }
 
-#applyColor:hover, #moreInfo:hover {
-  border-radius: 20px;
-}
+#applyColor { background-color: #3E8DD4; }
+#moreInfo { background-color: #749D8C; }
+
+#applyColor:hover { box-shadow: 0 0 15px 2px #3E8DD4; }
+#moreInfo:hover { box-shadow: 0 0 15px 2px #749D8C; }
 
 #applyIcon, #moreInfoIcon {
   margin-right: 6px;

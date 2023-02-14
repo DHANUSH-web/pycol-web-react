@@ -48,10 +48,11 @@ class App extends Component {
                     onClick={() => copyHexCode()}
                     onMouseOver={() =>
                       tippy(".copyIcon", {
-                        content: "Copy Color Code",
+                        content: "Copy <kbd>Ctrl+C</kbd>",
                         animation: "scale",
                         placement: "top",
                         arrow: false,
+                        allowHTML: true
                       })
                     }
                   >

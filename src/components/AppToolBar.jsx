@@ -13,10 +13,11 @@ export class MacAppToolBar extends Component {
           id="close"
           onMouseOver={() =>
             tippy("#close", {
-              content: "Close",
+              content: "Close <kbd>Ctrl+W</kbd>",
               placement: "top",
               animation: "scale",
               arrow: false,
+              allowHTML: true
             })
           }
           onClick={() => window.close("/")}
@@ -28,11 +29,7 @@ export class MacAppToolBar extends Component {
             toast("Feature under development", {
               icon: "😅",
               duration: 1500,
-              style: {
-                fontFamily: "pycol",
-                fontWeight: "bolder",
-                fontSize: 14,
-              },
+              className: 'ltm'
             })
           }
         ></i>
@@ -43,11 +40,7 @@ export class MacAppToolBar extends Component {
             toast("Feature under development", {
               icon: "😅",
               duration: 1500,
-              style: {
-                fontFamily: "pycol",
-                fontWeight: "bolder",
-                fontSize: 14,
-              },
+              className: 'ltm'
             })
           }
         ></i>
