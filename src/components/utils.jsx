@@ -283,10 +283,10 @@ document.addEventListener(
       toast.success("You got the RGB :)", {
         className: "ltm",
       });
-    } else if (e.shiftKey && String.fromCharCode(e.keyCode) == 'D') {
+    } else if (e.shiftKey && String.fromCharCode(e.keyCode) === 'D') {
       e.preventDefault();
       swithTheme('dark');
-    } else if (e.shiftKey && String.fromCharCode(e.keyCode) == 'L') {
+    } else if (e.shiftKey && String.fromCharCode(e.keyCode) === 'L') {
       e.preventDefault();
       swithTheme('light');
     }

@@ -6,15 +6,11 @@ import "tippy.js/dist/tippy.css";
 import "./AccessTools.css";
 
 const AccessTools = () => {
-  let [theme, setTheme, getPresentTheme] = useState(true);
+  let [theme, setTheme] = useState(true);
 
   setTheme = () => {
     theme = !theme;
     return theme ? 'light' : 'dark';
-  }
-
-  getPresentTheme = () => {
-    return theme ? 'light': 'dark';
   }
 
   return (
