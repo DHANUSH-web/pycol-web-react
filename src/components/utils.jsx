@@ -84,11 +84,11 @@ export const copyHexCode = () => {
     let hex = getHexCode(getSliderValues());
     navigator.clipboard.writeText(hex);
     toast.success("Copied to clipboard", {
-      className: 'ltm'
+      className: "ltm",
     });
   } catch (e) {
     toast.error("Something went wrong", {
-      className: 'ltm'
+      className: "ltm",
     });
   }
 };
@@ -139,44 +139,44 @@ export const applyColor = () => {
     aqua: [0, 255, 255],
     orange: [255, 135, 0],
   };
-
+  
   let widget = document.getElementById("colorInput");
   let color = widget.value;
-
+  
   if (color[0] === "#") {
     if (color.length !== 7)
-      toast.error("Hex code is invalid", {
-        className: 'ltm'
-      });
+    toast.error("Hex code is invalid", {
+      className: "ltm",
+    });
     else updateWidgets(getRGB(color.substring(1)));
   } else if (color.length === 0)
-    toast.error("Field is empty", {
-      className: 'ltm'
-    });
+  toast.error("Field is empty", {
+    className: "ltm",
+  });
   else if (color.toLowerCase() in stdColors) {
     updateWidgets(stdColors[color.toLowerCase()]);
   } else {
     color = color.split(" ");
     if (color.length !== 3)
-      toast.error("Invalid color", {
-        className: 'ltm'
-      });
+    toast.error("Invalid color", {
+      className: "ltm",
+    });
     else if (
       validateColor(color[0]) &&
       validateColor(color[1]) &&
       validateColor(color[2])
-    )
+      )
       updateWidgets(color);
     else
-      toast.error("Values must be in 0 to 255 range", {
-        className: 'ltm'
-      });
+    toast.error("Values must be in 0 to 255 range", {
+      className: "ltm",
+    });
   }
 };
 
 export const moreInfo = () => {
   toast.success("PyCOL is developed by Dhanush H V", {
-    className: 'moreInfo'
+    className: "moreInfo",
   });
 };
 
@@ -184,13 +184,14 @@ export const saveColor = () => {
   let color = getSliderValues();
   let stack = document.getElementById("saved-colors");
   let initialChild = document.getElementById("empty-message");
-
-  if (stack.childElementCount === 7) toast.error("No space, clear the list", {
-    className: 'ltm'
+  
+  if (stack.childElementCount === 7)
+  toast.error("No space, clear the list", {
+    className: "ltm",
   });
   else {
     if (stack.contains(initialChild)) stack.removeChild(initialChild);
-
+    
     let block = document.createElement("div");
     let hexCode = getHexCode(color);
     block.id = "savedColor";
@@ -213,7 +214,7 @@ export const saveColor = () => {
         stack.appendChild(span);
       }
     };
-
+    
     block.style.backgroundColor = hexCode;
     stack.appendChild(block);
   }
@@ -221,12 +222,14 @@ export const saveColor = () => {
 
 export const swithTheme = (theme) => {
   if (theme === "dark") {
-    document.getElementById('app-theme').innerHTML = '<i class="fa fa-sun"></i>';
+    document.getElementById("app-theme").innerHTML =
+    '<i class="fa fa-sun"></i>';
     toast.success("Switched to Dark Theme", {
       className: "dtm",
     });
   } else {
-    document.getElementById('app-theme').innerHTML = '<i class="fa fa-moon"></i>';
+    document.getElementById("app-theme").innerHTML =
+    '<i class="fa fa-moon"></i>';
     toast.success("Switched to Light Theme", {
       className: "ltm",
     });
@@ -236,11 +239,11 @@ export const swithTheme = (theme) => {
 export const clearColorList = () => {
   let stack = document.getElementById("saved-colors");
   let initialChild = document.getElementById("empty-message");
-
+  
   if (stack.childElementCount === 1 && stack.contains(initialChild))
-    toast.error("Color list is empty", {
-      className: 'ltm'
-    });
+  toast.error("Color list is empty", {
+    className: "ltm",
+  });
   else {
     document.getElementById("savedColor").remove();
     if (stack.childElementCount === 0) {
@@ -278,8 +281,14 @@ document.addEventListener(
       let rgb = getSliderValues();
       navigator.clipboard.writeText(`${rgb[0]}, ${rgb[1]}, ${rgb[2]}`);
       toast.success("You got the RGB :)", {
-        className: 'ltm'
+        className: "ltm",
       });
+    } else if (e.shiftKey && String.fromCharCode(e.keyCode) == 'D') {
+      e.preventDefault();
+      swithTheme('dark');
+    } else if (e.shiftKey && String.fromCharCode(e.keyCode) == 'L') {
+      e.preventDefault();
+      swithTheme('light');
     }
   },
   false
