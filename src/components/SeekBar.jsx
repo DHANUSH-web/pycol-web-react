@@ -54,24 +54,6 @@ class SeekBar extends Component {
             onChange={() => triggerSliders("BSet", "BSlide")}
           />
         </div>
-        <div className="BSlider">
-          <input
-            type="range"
-            defaultValue={255}
-            max={255}
-            className="BSlide"
-            id="BSlide"
-            onChange={() => setSpinBoxValues(getSliderValues())}
-          />
-          <input
-            type="number"
-            defaultValue={255}
-            placeholder="Blue"
-            className="BSet"
-            id="BSet"
-            onChange={() => triggerSliders("BSet", "BSlide")}
-          />
-        </div>
       </div>
     );
   }
