@@ -34,7 +34,7 @@ body {
   min-height: 555px;
   padding: 0;
   margin: 0 auto;
-  display: flex;
+  display: inline-flex;
   align-items: flex-start;
 }
 

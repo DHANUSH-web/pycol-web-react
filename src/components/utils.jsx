@@ -1,6 +1,7 @@
 import toast from "react-hot-toast";
 import tippy from "tippy.js";
 import "tippy.js/animations/scale.css";
+import { ModalOverlay } from "@chakra-ui/react";
 
 export const getSliderValues = () => {
   let r = parseInt(document.getElementById("RSlide").value);
