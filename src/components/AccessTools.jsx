@@ -67,7 +67,7 @@ const AccessTools = () => {
           className="app-theme"
           id="app-theme"
           onMouseOver={() => tippy('.app-theme', {
-            content: 'Theme <kbd>Shift+T<kbd>',
+            content: 'Theme <kbd>Shift+D/L<kbd>',
             animation: 'scale',
             arrow: false,
             placement: 'right',
