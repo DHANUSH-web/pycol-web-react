@@ -46,7 +46,7 @@ const updateWidgets = (color) => {
     document.getElementById("preview").style.backgroundColor = hex;
     document.getElementById("hexColor").innerHTML = hex;
   } catch (e) {
-    toast.error("Something went wrong");
+    toast.error("Something went wrong", { className: 'ltm' });
   }
 };
 
