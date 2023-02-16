@@ -3,7 +3,7 @@ import {
   getHexCode,
   copyHexCode,
   applyColor,
-  moreInfo
+  moreInfo,
 } from "./components/utils";
 import { Toaster } from "react-hot-toast";
 import MacAppToolBar from "./components/AppToolBar";
@@ -52,7 +52,7 @@ class App extends Component {
                         animation: "scale",
                         placement: "top",
                         arrow: false,
-                        allowHTML: true
+                        allowHTML: true,
                       })
                     }
                   >
@@ -79,7 +79,7 @@ class App extends Component {
                       placement: "top",
                       animation: "scale",
                       arrow: false,
-                      allowHTML: true
+                      allowHTML: true,
                     });
                   }}
                   onMouseOut={() => {
@@ -100,7 +100,7 @@ class App extends Component {
                         animation: "scale",
                         arrow: false,
                         followCursor: true,
-                        allowHTML: true
+                        allowHTML: true,
                       })
                     }
                   >
@@ -109,14 +109,14 @@ class App extends Component {
                   </button>
                   <button
                     id="moreInfo"
-                    onClick={() => moreInfo() }
+                    onClick={() => moreInfo()}
                     onMouseOver={() =>
                       tippy("#moreInfo", {
                         content: "Learn more <kbd>Ctrl+I</kdb>",
                         placement: "bottom",
                         animation: "scale",
                         arrow: false,
-                        allowHTML: true
+                        allowHTML: true,
                       })
                     }
                   >
