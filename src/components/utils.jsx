@@ -46,7 +46,7 @@ const updateWidgets = (color) => {
     document.getElementById("preview").style.backgroundColor = hex;
     document.getElementById("hexColor").innerHTML = hex;
   } catch (e) {
-    toast.error("Something went wrong", { className: 'ltm' });
+    toast.error("Something went wrong", { className: "ltm" });
   }
 };
 
@@ -55,8 +55,13 @@ export const triggerSliders = (spinId, sliderId) => {
   let spinBoxValue = parseInt(spinBox.value);
 
   if (spinBoxValue < 0 || spinBoxValue > 255)
-    toast.error("Values must only be 0 to 255");
-  else if (spinBox.value.length === 0) toast.error("Input cannot be empty");
+    toast.error("Values must only be 0 to 255", {
+      className: "ltm",
+    });
+  else if (spinBox.value.length === 0)
+    toast.error("Input cannot be empty", {
+      className: "ltm",
+    });
   else {
     document.getElementById(sliderId).value = spinBoxValue;
     let hex = getHexCode(getSliderValues());
