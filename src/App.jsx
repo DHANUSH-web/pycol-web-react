@@ -1,17 +1,13 @@
 import { React, Component } from "react";
-import {
-  getHexCode,
-  copyHexCode,
-  applyColor,
-  moreInfo,
-} from "./components/utils";
-import { Toaster } from "react-hot-toast";
+import { getHexCode, copyHexCode } from "./components/utils";
 import MacAppToolBar from "./components/AppToolBar";
 import AccessTools from "./components/AccessTools";
 import SeekBar from "./components/SeekBar";
-import tippy from "tippy.js";
-import "tippy.js/dist/tippy.css";
+import Buttons from "./components/Buttons";
+import { Toaster } from "react-hot-toast";
 import "tippy.js/animations/scale.css";
+import "tippy.js/dist/tippy.css";
+import tippy from "tippy.js";
 import "./App.css";
 
 const developerProfile = "https://www.bitbucket.org/dhanushhv/";
@@ -89,7 +85,7 @@ class App extends Component {
                 >
                   <span id="empty-message">Inventory is empty</span>
                 </div>
-                <div id="control-buttons">
+                {/*<div id="control-buttons">
                   <button
                     id="applyColor"
                     onClick={() => applyColor()}
@@ -126,7 +122,8 @@ class App extends Component {
                     ></i>
                     More Info
                   </button>
-                </div>
+                  </div>*/}
+                <Buttons />
               </div>
             </div>
           </div>

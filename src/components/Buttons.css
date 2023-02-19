@@ -1,0 +1,30 @@
+Button {
+    width: 140px;
+    border: none;
+    padding: 7px 7px;
+    margin-top: 20px;
+    border-radius: 7px;
+    font-family: pycol;
+    font-weight: bolder;
+    font-size: 14px;
+    outline: none;
+    transition: 0.5s;
+}
+
+.applyButton {
+    background-color: #0050ff11;
+    color: #0080ff;
+}
+
+.applyButton:hover {
+    background-color: #0050ff22;
+}
+
+.moreInfoButton {
+    background-color: #00808011;
+    color: #008080;
+}
+
+.moreInfoButton:hover {
+    background-color: #00808022;
+}

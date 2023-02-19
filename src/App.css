@@ -174,7 +174,7 @@ body {
   font-weight: bolder;
   font-family: pycol;
 }
-
+/* 
 #control-buttons {
   margin: auto;
   display: flex;
@@ -202,7 +202,7 @@ body {
 #applyIcon, #moreInfoIcon {
   margin-right: 6px;
   transform: scale(0.9);
-}
+} */
 
 #tipIcon {
   border: solid 2px;
