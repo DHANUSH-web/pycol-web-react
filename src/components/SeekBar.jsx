@@ -8,7 +8,14 @@ class SeekBar extends Component {
     return (
       <div className="progress_container">
         <div className="RSlider">
-          <input type="range" defaultValue={ 255 } max={255} className="RSlide" id="RSlide" onChange={ () => setSpinBoxValues(getSliderValues()) }/>
+          <input
+            type="range"
+            defaultValue={255}
+            max={255}
+            className="RSlide"
+            id="RSlide"
+            onChange={() => setSpinBoxValues(getSliderValues())}
+          />
           <input
             type="number"
             defaultValue={255}
